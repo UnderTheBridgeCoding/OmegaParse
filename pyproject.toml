@@ -13,4 +13,4 @@ readme = "README.md"
 requires-python = ">=3.9"
 
 [project.scripts]
-omega-parse = "omega_parse.cli:main"
+omegaparser = "omega_parse.cli:main"
