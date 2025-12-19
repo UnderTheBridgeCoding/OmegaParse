@@ -26,6 +26,45 @@ Further integrations may be added deliberately over time.
 
 ---
 
+## Installation & Usage
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/UnderTheBridgeCoding/OmegaParse.git
+cd OmegaParse
+
+# Install with pip
+pip install -e .
+```
+
+### Basic Usage
+
+```bash
+# Parse a ZIP file
+omegaparser takeout.zip --out ./output
+
+# Parse a directory
+omegaparser /path/to/data --out ./output
+
+# Enable verbose logging
+omegaparser input.zip --out ./output --verbose
+```
+
+### Output Files
+
+OmegaParser produces four JSON files in the output directory:
+
+- **`summary.json`** — High-level processing statistics
+- **`by_content_type.json`** — Records grouped by content type (video, comment, search, etc.)
+- **`by_channel.json`** — Records grouped by channel/source
+- **`unclassified.json`** — Records that couldn't be fully classified
+
+All outputs preserve the original raw data alongside normalized fields.
+
+---
+
 ## What Omega Parse is *not*
 
 - Not a scraper
@@ -73,9 +112,38 @@ See `LICENSE.txt` for full terms.
 
 ---
 
+## Architecture
+
+The project follows a clean, modular structure:
+
+```
+omega_parse/
+├─ main.py              # Orchestration pipeline
+├─ cli.py               # CLI entry point
+├─ ingest.py            # ZIP + directory ingestion
+├─ walkers.py           # Recursive file traversal
+├─ detectors.py         # File type & content detection
+├─ normalizers.py       # Schema normalization
+├─ aggregators.py       # Counts & summaries
+├─ emitters.py          # JSON output writers
+├─ schemas.py           # Intermediate data models
+└─ utils.py             # Utility functions
+```
+
+### Processing Pipeline
+
+1. **Ingest** — Accept ZIP or directory input
+2. **Walk** — Recursively traverse all files
+3. **Detect** — Classify file type and content (soft classification)
+4. **Normalize** — Convert to common schema, preserve raw data
+5. **Aggregate** — Count by type, source, track unknowns
+6. **Emit** — Write deterministic JSON outputs
+
+---
+
 ## Status
 
-Omega Parse is early‑stage and evolving.
+OmegaParser is functional and tested.
 
 The focus is correctness, clarity, and long‑term coherence — not feature velocity.
 
