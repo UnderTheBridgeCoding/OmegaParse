@@ -10,6 +10,19 @@ from datetime import datetime
 import logging
 
 
+# Timestamp formats to try when parsing
+TIMESTAMP_FORMATS = [
+    "%Y-%m-%dT%H:%M:%S.%fZ",  # ISO format with microseconds
+    "%Y-%m-%dT%H:%M:%SZ",      # ISO format without microseconds
+    "%Y-%m-%d %H:%M:%S",       # Standard datetime
+    "%Y-%m-%d",                 # Date only
+    "%Y-%m-%dT%H:%M:%S",       # ISO without Z
+]
+
+# Maximum characters to preserve from HTML/TXT content
+MAX_RAW_CONTENT_LENGTH = 1000
+
+
 def setup_logging(level: int = logging.INFO) -> logging.Logger:
     """
     Configure logging for OmegaParser.
@@ -60,16 +73,7 @@ def parse_timestamp(timestamp_str: str) -> tuple[Optional[datetime], bool]:
     if not timestamp_str:
         return None, True
     
-    # Common timestamp formats
-    formats = [
-        "%Y-%m-%dT%H:%M:%S.%fZ",  # ISO format with microseconds
-        "%Y-%m-%dT%H:%M:%SZ",      # ISO format without microseconds
-        "%Y-%m-%d %H:%M:%S",       # Standard datetime
-        "%Y-%m-%d",                 # Date only
-        "%Y-%m-%dT%H:%M:%S",       # ISO without Z
-    ]
-    
-    for fmt in formats:
+    for fmt in TIMESTAMP_FORMATS:
         try:
             return datetime.strptime(timestamp_str, fmt), False
         except ValueError:

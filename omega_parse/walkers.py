@@ -12,6 +12,10 @@ import logging
 logger = logging.getLogger("omegaparser")
 
 
+# Known data file extensions that should not be skipped even if they start with '.'
+ALLOWED_DOTFILE_EXTENSIONS = {'.json', '.csv', '.tsv', '.txt'}
+
+
 class FileWalker:
     """
     Recursively walks directories and yields files for processing.
@@ -83,8 +87,10 @@ class FileWalker:
         
         for item in items:
             # Skip hidden files/directories (starting with .)
-            if item.name.startswith('.') and item.name not in {'.json', '.csv'}:
-                continue
+            # unless they have known data file extensions
+            if item.name.startswith('.'):
+                if item.suffix not in ALLOWED_DOTFILE_EXTENSIONS:
+                    continue
             
             # Skip specific patterns
             if item.name in self.skip_patterns:

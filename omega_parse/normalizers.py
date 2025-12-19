@@ -12,7 +12,7 @@ import json
 import csv
 
 from .schemas import NormalizedRecord, FileClassification
-from .utils import generate_record_id, safe_json_load, parse_timestamp
+from .utils import generate_record_id, safe_json_load, parse_timestamp, MAX_RAW_CONTENT_LENGTH
 
 
 logger = logging.getLogger("omegaparser")
@@ -253,7 +253,7 @@ class Normalizer:
             source_file=str(file_path),
             content_type='unknown',
             source_type='unknown',
-            raw_data={'html_content': content[:1000]},  # Truncate for storage
+            raw_data={'html_content': content[:MAX_RAW_CONTENT_LENGTH]},
             detected_format='html',
             parsing_notes=['HTML files are not fully parsed - stored as unknown']
         )]
@@ -280,7 +280,7 @@ class Normalizer:
             source_file=str(file_path),
             content_type='unknown',
             source_type='unknown',
-            raw_data={'text_content': content[:1000]},  # Truncate for storage
+            raw_data={'text_content': content[:MAX_RAW_CONTENT_LENGTH]},
             detected_format='txt',
             parsing_notes=['Text files are not fully parsed - stored as unknown']
         )]
