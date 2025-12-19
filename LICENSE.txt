@@ -1,0 +1,50 @@
+Business Source License 1.1
+
+Copyright (c) 2025 LuminaryOmega
+
+-----------------------------------------------------------------------
+
+Terms
+
+The Licensor grants you the right to copy, modify, create derivative works,
+redistribute, and make non-production use of the Licensed Work.
+
+You may make production use of the Licensed Work without a commercial license
+if you are an individual or an organization with less than $1,000,000 USD in
+annual revenue.
+
+If you are an organization with $1,000,000 USD or more in annual revenue,
+production use of the Licensed Work requires a separate commercial license
+from the Licensor.
+
+The Licensed Work is provided “AS IS”, without warranty of any kind, express
+or implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, and non-infringement. In no event shall the
+Licensor be liable for any claim, damages, or other liability arising from the
+use of the Licensed Work.
+
+This license terminates automatically if you breach any of its terms. Upon
+termination, you must cease all use of the Licensed Work and destroy all
+copies in your possession.
+
+-----------------------------------------------------------------------
+
+Additional Use Grant
+
+Individuals and organizations below the revenue threshold may use the
+Licensed Work freely for personal, research, educational, and internal
+purposes.
+
+-----------------------------------------------------------------------
+
+Change License
+
+At the Licensor’s discretion, this license may be converted to a permissive
+open-source license (such as Apache License 2.0) at a future date.
+
+-----------------------------------------------------------------------
+
+For more information on the Business Source License, see:
+https://mariadb.com/bsl-faq-adopting/
+
+*FOR COMMERCIAL USE INQUARIES/CONTRACTS please contact Core @ lixil_ii_lixil@proton.me thank you. 
