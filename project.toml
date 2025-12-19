@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omega-parse"
+version = "0.1.0"
+description = "The last parser you'll ever need."
+authors = [
+  { name = "Core", email = "lixil_ii_lixil@proton.me" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.scripts]
+omega-parse = "omega_parse.cli:main"
