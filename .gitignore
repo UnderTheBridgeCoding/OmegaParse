@@ -1,0 +1,103 @@
+############################
+# Omega Parse — .gitignore #
+############################
+
+# ---------------------------------
+# Personal / Exported Data (CRITICAL)
+# ---------------------------------
+
+# Google Takeout and archives
+*takeout*
+*Takeout*
+*.zip
+*.tar
+*.gz
+*.7z
+
+# Parsed or raw data exports
+*.csv
+*.tsv
+*.jsonl
+
+# Allow explicit schema/config JSON if needed
+!schema.json
+!config.json
+
+# Chat / log exports
+*history*
+*archive*
+*export*
+*conversation*
+*conversations*
+
+# ---------------------------------
+# Generated Outputs
+# ---------------------------------
+
+# Analysis results
+/output/
+/outputs/
+/results/
+/derived/
+/generated/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ---------------------------------
+# Temporary / Working Files
+# ---------------------------------
+
+# Temp folders
+/tmp/
+/temp/
+/.cache/
+/cache/
+
+# Scratch files
+*.tmp
+*.bak
+*.swp
+*.log
+
+# ---------------------------------
+# OS / Editor Noise
+# ---------------------------------
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# ---------------------------------
+# Environment / Secrets
+# ---------------------------------
+
+.env
+.env.*
+*.key
+*.pem
+*.secret
+
+# ---------------------------------
+# Dependency / Build Artifacts
+# (kept generic on purpose)
+# ---------------------------------
+
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
