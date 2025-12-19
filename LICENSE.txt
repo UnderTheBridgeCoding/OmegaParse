@@ -47,4 +47,6 @@ open-source license (such as Apache License 2.0) at a future date.
 For more information on the Business Source License, see:
 https://mariadb.com/bsl-faq-adopting/
 
-*FOR COMMERCIAL USE INQUARIES/CONTRACTS please contact Core @ lixil_ii_lixil@proton.me thank you. 
+For commercial use inquiries or licensing agreements, please contact:
+Core — lixil_ii_lixil@proton.me
+
